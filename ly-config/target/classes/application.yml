@@ -1,0 +1,22 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/hifuture/shunyi-leyou.git
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+#暴露触发消息总线的地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

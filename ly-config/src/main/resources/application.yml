@@ -1,0 +1,21 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/ericli93/leyou.git #这里要写自己的git地址
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
